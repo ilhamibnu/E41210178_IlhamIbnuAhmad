@@ -18,7 +18,13 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        "nama" => "Ilham Ibnu Ahmad",
+        "prodi" => "Teknik Informatika",
+        "jurusan" => "Teknologi Informasi",
+        "nim" => "E41210178",
+        "imgurl" => "https://awsimages.detik.net.id/visual/2022/09/11/bjorka.jpeg?w=650"
+    ]);
 });
 
 Route::get('/test', function () {

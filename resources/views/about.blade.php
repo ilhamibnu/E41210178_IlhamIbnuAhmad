@@ -17,11 +17,11 @@
 <body>
     <h3>About</h3>
     <a href="/">Home</a>
-    <h4>Prodi : Teknik Informatika</h4>
-    <h4>Nama : Ilham Ibnu Ahmad</h4>
-    <h4>Nim : E41210178</h4>
-    <h4>Juruasn : Teknologi Informasi</h4>
-    <img src="https://awsimages.detik.net.id/visual/2022/09/11/bjorka.jpeg?w=650" alt="" width="200">
+    <h4>Nim : <?= $nim; ?></h4>
+    <h4>Nama : <?= $nama; ?></h4>
+    <h4>Prodi : <?= $prodi; ?></h4>
+    <h4>Jurusan : <?= $jurusan; ?></h4>
+    <img src="<?= $imgurl; ?>" alt="" width="200">
 
 </body>
 
