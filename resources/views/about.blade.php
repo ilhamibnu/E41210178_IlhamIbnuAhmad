@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-</head>
+@include('partials.navbar')
 
-<style>
-    body {
-        background-color: pink;
-    }
-</style>
-
-<body>
-    <h3>About</h3>
-    <a href="/">Home</a>
-    <h4>Nim : <?= $nim; ?></h4>
-    <h4>Nama : <?= $nama; ?></h4>
-    <h4>Prodi : <?= $prodi; ?></h4>
-    <h4>Jurusan : <?= $jurusan; ?></h4>
-    <img src="<?= $imgurl; ?>" alt="" width="200">
-
-</body>
-
-</html>
+@section('container')
+    <div class="container mt-4">
+        <h1>About</h1>
+    </div>
+    <div class="containe mt-5">
+        <h6>Nim : {{ $nim }}</h6>
+        <h6>Nama : {{ $nama }}</h6>
+        <h6>Prodi : {{ $prodi }}</h6>
+        <h6>Jurusan : {{ $jurusan }}</h6>
+        <img src="{{ $imgurl }}" alt="" width="200">
+    </div>
+@endsection
