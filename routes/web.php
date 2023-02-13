@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,82 +37,30 @@ Route::get('/testaja', function () {
     ]);
 });
 
+Route::get('/404', function () {
+    return view(
+        '404'
+    );
+});
+
 Route::get('/blog', function () {
-
-
-$blog_posts = [
-
-    [
-        "title" => "Judul Post Pertama",
-        "slug" => "judulpostpertama",
-        "author" => "Ilham",
-        "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, facere quaerat facilis fugiat illo nostrum corrupti tenetur
-        aperiam quis non aliquam voluptas inventore maiores vel similique enim minus repellendus iste id porro quod! Fugiat harum illo iure ea facere
-        distinctio accusamus reiciendis omnis. Itaque autem similique magnam, cum officia beatae commodi quos ab, nam sint ipsum. Omnis in, voluptate
-        rerum dolore tenetur fuga sint laboriosam similique possimus autem nobis eius, sequi porro distinctio earum qui quas explicabo dolorem doloribus inventore.
-        "
-    ],
-    [
-        "title" => "Judul Post Kedua",
-        "slug" => "judulpostkedua",
-        "author" => "Rijal",
-        "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, facere quaerat facilis fugiat illo nostrum corrupti tenetur
-        aperiam quis non aliquam voluptas inventore maiores vel similique enim minus repellendus iste id porro quod! Fugiat harum illo iure ea facere
-        distinctio accusamus reiciendis omnis. Itaque autem similique magnam, cum officia beatae commodi quos ab, nam sint ipsum. Omnis in, voluptate
-        rerum dolore tenetur fuga sint laboriosam similique possimus autem nobis eius, sequi porro distinctio earum qui quas explicabo dolorem doloribus inventore.
-        "
-    ]
-
-
-
-];
 
     return view('blog', [
         "title" => "Post",
-        "posts" => $blog_posts
+        "post" => Post::all()
+
     ]);
 });
 
+
+
 // halaman single post ngab
 
-Route::get('blogs/{slug}', function($slug){
-
-
-$blog_contents = [
-
-    [
-        "title" => "Judul Post Pertama",
-        "slug" => "judulpostpertama",
-        "author" => "Ilham",
-        "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, facere quaerat facilis fugiat illo nostrum corrupti tenetur
-        aperiam quis non aliquam voluptas inventore maiores vel similique enim minus repellendus iste id porro quod! Fugiat harum illo iure ea facere
-        distinctio accusamus reiciendis omnis. Itaque autem similique magnam, cum officia beatae commodi quos ab, nam sint ipsum. Omnis in, voluptate
-        rerum dolore tenetur fuga sint laboriosam similique possimus autem nobis eius, sequi porro distinctio earum qui quas explicabo dolorem doloribus inventore.
-        "
-    ],
-    [
-        "title" => "Judul Post Kedua",
-        "slug" => "judulpostkedua",
-        "author" => "Rijal",
-        "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, facere quaerat facilis fugiat illo nostrum corrupti tenetur
-        aperiam quis non aliquam voluptas inventore maiores vel similique enim minus repellendus iste id porro quod! Fugiat harum illo iure ea facere
-        distinctio accusamus reiciendis omnis. Itaque autem similique magnam, cum officia beatae commodi quos ab, nam sint ipsum. Omnis in, voluptate
-        rerum dolore tenetur fuga sint laboriosam similique possimus autem nobis eius, sequi porro distinctio earum qui quas explicabo dolorem doloribus inventore.
-        "
-    ],
-
-];
-
-$new_post = [];
-foreach($blog_contents as $post){
-    if($post["slug"] === $slug){
-        $new_post = $post;
-    }
-}
+Route::get('blog/{slug}', function ($slug) {
 
     return view('post', [
         "title" => "single post",
-        "post" => $new_post,
+        "post" => Post::find($slug)
     ]);
 
 });

@@ -3,13 +3,13 @@
 @include('partials.navbar')
 
 @section('container')
-    @foreach ($posts as $post)
+    @foreach ($post as $p)
         <article class="mb-5">
-            <a href="/blogs/{{ $post['slug'] }}">
-                <h2>{{ $post['title'] }}
+            <a href="/blog/{{ $p['slug'] }}">
+                <h2>{{ $p['title'] }}
             </a></h2>
-            <h6>Author : {{ $post['author'] }}</h6>
-            <p>{{ $post['body'] }}</p>
+            <h6>Author : {{ $p['author'] }}</h6>
+            <p>{{ $p['body'] }}</p>
         </article>
     @endforeach
 @endsection

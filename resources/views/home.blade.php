@@ -28,7 +28,8 @@
 
 <head>
     <meta charset='UTF-8' />
-    <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport' />
+    <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5'
+        name='viewport' />
     <meta content='IE=edge' http-equiv='X-UA-Compatible' />
     <title>Jurusan Teknologi Informasi</title>
     <link rel="icon" type="image/png" sizes="16x16" href="http://103.109.209.245/jtiform/assets/img/favicon.png" />
@@ -52,7 +53,7 @@
                     </h1>
                     <p class="font-14 mt-3">
                         #PolijeSIP #JTIPolije #TIPC
-                        <a href="" class="text-primary"></a>
+                        <a href="/testaja" class="font-14 mt-3">#ez</a>
                     </p>
                 </div>
             </div>
