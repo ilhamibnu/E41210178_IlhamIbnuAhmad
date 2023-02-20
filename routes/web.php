@@ -2,6 +2,7 @@
 
 use App\Models\Post;
 use App\Models\Content;
+use App\Models\About;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Xml\Tests;
 
@@ -23,14 +24,15 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about', [
-        "title" => "About",
-        "nama" => "Ilham Ibnu Ahmad",
-        "prodi" => "Teknik Informatika",
-        "jurusan" => "Teknologi Informasi",
-        "nim" => "E41210178",
-        "imgurl" => "https://awsimages.detik.net.id/visual/2022/09/11/bjorka.jpeg?w=650"
-    ]);
+    // return view('about', [
+    //     "title" => "About",
+    //     "nama" => "Ilham Ibnu Ahmad",
+    //     "prodi" => "Teknik Informatika",
+    //     "jurusan" => "Teknologi Informasi",
+    //     "nim" => "E41210178",
+    //     "imgurl" => "https://awsimages.detik.net.id/visual/2022/09/11/bjorka.jpeg?w=650"
+    // ]);
+    return About::dataabout();
 });
 
 Route::get('/testaja', function () {

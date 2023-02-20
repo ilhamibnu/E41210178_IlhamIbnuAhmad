@@ -11,6 +11,7 @@
         <h6>Nama : {{ $nama }}</h6>
         <h6>Prodi : {{ $prodi }}</h6>
         <h6>Jurusan : {{ $jurusan }}</h6>
-        <img src="{{ $imgurl }}" alt="" width="200">
+        <img src="{{ asset($imgurl) }}" width="200">
+
     </div>
 @endsection
