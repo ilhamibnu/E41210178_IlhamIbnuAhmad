@@ -1,7 +1,9 @@
 <?php
 
 use App\Models\Post;
+use App\Models\Content;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Xml\Tests;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +45,17 @@ Route::get('/404', function () {
     );
 });
 
+Route::get('/cobalagi', function () {
+    return view(
+        'cobalagi'
+    );
+});
+
+Route::get('/cobalagi', function () {
+    return Content::testajaya();
+});
+
+
 Route::get('/blog', function () {
 
     return view('blog', [
@@ -51,6 +64,7 @@ Route::get('/blog', function () {
 
     ]);
 });
+
 
 
 
